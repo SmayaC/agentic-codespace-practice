@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <title>Pelican Flying on a Bicycle</title>
+
+  <!-- Sky -->
+  <rect x="0" y="0" width="600" height="400" fill="#bfe6ff"/>
+  <!-- Sun -->
+  <circle cx="525" cy="65" r="34" fill="#fff2a8"/>
+
+  <!-- Distant ground, far below (flying!) -->
+  <rect x="0" y="368" width="600" height="32" fill="#8fd18f"/>
+
+  <!-- ===== DRIFTING CLOUDS ===== -->
+  <g fill="#ffffff" opacity="0.92">
+    <g>
+      <ellipse cx="110" cy="85" rx="42" ry="22"/>
+      <ellipse cx="150" cy="78" rx="52" ry="27"/>
+      <ellipse cx="192" cy="88" rx="36" ry="20"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="-25 0; 25 0; -25 0" dur="7s" repeatCount="indefinite"/>
+    </g>
+    <g opacity="0.75">
+      <ellipse cx="470" cy="55" rx="40" ry="20"/>
+      <ellipse cx="510" cy="50" rx="48" ry="24"/>
+      <ellipse cx="548" cy="58" rx="32" ry="18"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="20 0; -20 0; 20 0" dur="9s" repeatCount="indefinite"/>
+    </g>
+    <g opacity="0.6">
+      <ellipse cx="300" cy="30" rx="34" ry="16"/>
+      <ellipse cx="332" cy="26" rx="40" ry="18"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="-15 0; 15 0; -15 0" dur="11s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- ===== THE FLYING BIKE + PELICAN ===== -->
+  <!-- Outer group: bobs up and down (base lift of -70, gently floating) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0 -74; 0 -54; 0 -74" dur="2.4s" repeatCount="indefinite"/>
+
+    <!-- Inner group: gentle tilt while flying -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        values="-3 300 210; 3 300 210; -3 300 210" dur="2.4s" repeatCount="indefinite"/>
+
+      <!-- Motion puffs trailing behind -->
+      <g fill="#ffffff" opacity="0.85">
+        <circle cx="120" cy="250" r="12">
+          <animate attributeName="cx" values="150;60" dur="1.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.9;0" dur="1.2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="150" cy="290" r="9">
+          <animate attributeName="cx" values="180;90" dur="1.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.8;0" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="140" cy="330" r="10">
+          <animate attributeName="cx" values="170;80" dur="1.7s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.8;0" dur="1.7s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <!-- ===== BICYCLE ===== -->
+      <!-- Rear wheel (spins) -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0 190 285; 360 190 285" dur="0.9s" repeatCount="indefinite"/>
+        <circle cx="190" cy="285" r="55" fill="none" stroke="#333" stroke-width="7"/>
+        <g stroke="#666" stroke-width="2">
+          <line x1="190" y1="230" x2="190" y2="340"/>
+          <line x1="135" y1="285" x2="245" y2="285"/>
+          <line x1="151" y1="246" x2="229" y2="324"/>
+          <line x1="229" y1="246" x2="151" y2="324"/>
+        </g>
+        <circle cx="190" cy="285" r="6" fill="#333"/>
+      </g>
+      <!-- Front wheel (spins) -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0 410 285; 360 410 285" dur="0.9s" repeatCount="indefinite"/>
+        <circle cx="410" cy="285" r="55" fill="none" stroke="#333" stroke-width="7"/>
+        <g stroke="#666" stroke-width="2">
+          <line x1="410" y1="230" x2="410" y2="340"/>
+          <line x1="355" y1="285" x2="465" y2="285"/>
+          <line x1="371" y1="246" x2="449" y2="324"/>
+          <line x1="449" y1="246" x2="371" y2="324"/>
+        </g>
+        <circle cx="410" cy="285" r="6" fill="#333"/>
+      </g>
+
+      <!-- Frame -->
+      <g stroke="#c0392b" stroke-width="8" stroke-linecap="round" fill="none">
+        <line x1="190" y1="285" x2="250" y2="200"/>
+        <line x1="190" y1="285" x2="300" y2="290"/>
+        <line x1="300" y1="290" x2="250" y2="200"/>
+        <line x1="300" y1="290" x2="400" y2="205"/>
+        <line x1="250" y1="200" x2="400" y2="205"/>
+        <line x1="400" y1="205" x2="410" y2="285"/>
+      </g>
+
+      <!-- Seat -->
+      <path d="M220 196 q30 -14 60 4 q-30 8 -60 -4 z" fill="#222"/>
+
+      <!-- Handlebars -->
+      <g stroke="#333" stroke-width="7" stroke-linecap="round" fill="none">
+        <line x1="400" y1="205" x2="410" y2="175"/>
+        <path d="M395 172 q20 -6 34 6" stroke-width="8"/>
+      </g>
+
+      <!-- Crank + pedals (pedaling) -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0 300 290; 360 300 290" dur="0.9s" repeatCount="indefinite"/>
+        <circle cx="300" cy="290" r="10" fill="#333"/>
+        <g stroke="#333" stroke-width="5" stroke-linecap="round">
+          <line x1="300" y1="290" x2="278" y2="315"/>
+          <line x1="300" y1="290" x2="322" y2="265"/>
+        </g>
+      </g>
+
+      <!-- Pelican legs -->
+      <g stroke="#f5a623" stroke-width="6" stroke-linecap="round" fill="none">
+        <line x1="250" y1="215" x2="278" y2="312"/>
+        <line x1="250" y1="215" x2="322" y2="268"/>
+      </g>
+
+      <!-- ===== PELICAN ===== -->
+      <!-- Tail -->
+      <path d="M210 175 q-45 -20 -60 5 q35 12 60 5 z" fill="#f2f2f2" stroke="#d9d9d9" stroke-width="2"/>
+      <!-- Body -->
+      <ellipse cx="280" cy="175" rx="70" ry="48" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+      <!-- Wing (flapping) -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="-10 305 165; 12 305 165; -10 305 165" dur="0.7s" repeatCount="indefinite"/>
+        <path d="M300 160 q60 -20 100 8 q-55 18 -100 4 z" fill="#f2f2f2" stroke="#d9d9d9" stroke-width="2"/>
+        <ellipse cx="405" cy="172" rx="18" ry="12" fill="#f2f2f2" stroke="#d9d9d9" stroke-width="2"/>
+      </g>
+      <!-- Neck -->
+      <path d="M330 150 q35 -25 40 -60 q25 20 5 65 q-15 20 -45 12 z" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+      <!-- Head -->
+      <circle cx="378" cy="88" r="30" fill="#ffffff" stroke="#dcdcdc" stroke-width="2"/>
+      <!-- Eye -->
+      <circle cx="392" cy="80" r="5.5" fill="#1a1a1a"/>
+      <circle cx="394" cy="78" r="1.8" fill="#fff"/>
+      <!-- Upper beak -->
+      <path d="M402 80 q55 2 78 20 q-40 8 -78 -6 z" fill="#f5a623" stroke="#d68910" stroke-width="2"/>
+      <!-- Lower beak (pouch) -->
+      <path d="M402 92 q45 6 74 14 q-25 28 -76 8 q-6 -12 2 -22 z" fill="#ffcf66" stroke="#e0a82e" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
